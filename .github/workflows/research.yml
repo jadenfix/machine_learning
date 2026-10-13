@@ -10,6 +10,11 @@ jobs:
       OMP_NUM_THREADS: '1'
     steps:
       - uses: actions/checkout@v4
+        with:
+          # The demo receipt intentionally points at the exact recorded source
+          # commit. Keep that ancestor available so the provenance verifier can
+          # prove the capture belongs to this branch in pull-request checkouts.
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
