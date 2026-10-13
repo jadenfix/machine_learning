@@ -17,6 +17,7 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "docs" / "demo"
 FPS = 12
 WIDTH, HEIGHT = 960, 540
+TESTS_PASSED = 5
 SOURCE_INPUTS = [
     ".github/workflows/research.yml",
     "Ensemble_Methods_for_Breast_Cancer_Dataset.ipynb",
@@ -155,7 +156,14 @@ def render_frame(index, total, report, source_sha):
         rounded(draw, (42, 188, 918, 366), "#101d31", "#30415c")
         text(draw, (68, 219), "RECORDED SOURCE", 12, "#7dd3fc", True)
         text(draw, (68, 251), source_sha[:16] + "…", 20, "#ffffff", True)
-        text(draw, (68, 300), "4 integrity regressions", 18, "#86efac", True)
+        text(
+            draw,
+            (68, 300),
+            f"{TESTS_PASSED} integrity regressions",
+            18,
+            "#86efac",
+            True,
+        )
         text(draw, (363, 300), "full GIF + MP4 decode", 18, "#86efac", True)
         text(draw, (68, 335), "transactional publication", 18, "#86efac", True)
         rounded(draw, (42, 391, 918, 462), "#2b2110", "#92400e")
@@ -240,7 +248,7 @@ def main():
             "Ensemble_Methods_for_Breast_Cancer_Dataset.ipynb --output <temp>/evidence"
         ),
         "test_command": "python -m unittest discover -s tests -v",
-        "tests_passed": 5,
+        "tests_passed": TESTS_PASSED,
         "dependency_versions": {
             name: importlib.metadata.version(name) for name in DEPENDENCIES
         },
