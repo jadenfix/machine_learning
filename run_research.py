@@ -31,8 +31,8 @@ out = Path(args.output)
 if not out.is_absolute():
     out = root / out
 out = out.resolve(strict=False)
-if out == root:
-    parser.error("--output must not be the repository root")
+if out == root or out in root.parents:
+    parser.error("--output must not be the repository root or one of its ancestors")
 if out.exists() and not out.is_dir():
     parser.error("--output must be a directory")
 out.parent.mkdir(parents=True, exist_ok=True)

@@ -2,6 +2,7 @@
 """Record a truthful visual receipt from the tested offline workflow."""
 
 import hashlib
+import importlib.metadata
 import json
 import math
 import shutil
@@ -24,6 +25,14 @@ SOURCE_INPUTS = [
     "tests/test_research_runner.py",
     "scripts/record_demo.py",
     "scripts/verify_demo.py",
+]
+DEPENDENCIES = [
+    "numpy",
+    "pandas",
+    "scipy",
+    "matplotlib",
+    "scikit-learn",
+    "Pillow",
 ]
 
 
@@ -231,7 +240,10 @@ def main():
             "Ensemble_Methods_for_Breast_Cancer_Dataset.ipynb --output <temp>/evidence"
         ),
         "test_command": "python -m unittest discover -s tests -v",
-        "tests_passed": 4,
+        "tests_passed": 5,
+        "dependency_versions": {
+            name: importlib.metadata.version(name) for name in DEPENDENCIES
+        },
         "executed_cells": report["executed_cells"],
         "notebook_sha256": report["notebook_sha256"],
         "model_accuracies": {
