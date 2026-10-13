@@ -1,5 +1,13 @@
 # machine_learning
 
+## Demo: fail-closed research evidence
+
+![Transactional research workflow](docs/demo/machine-learning-demo.gif)
+
+[MP4 version](docs/demo/machine-learning-demo.mp4) · [source and artifact receipt](docs/demo/capture.json)
+
+This 15-second recording is generated from the actual provider-free notebook workflow and its integrity regressions. It shows a fixed 70/30 educational holdout; the displayed scores are descriptive results from that one checked split, not clinical validation or a claim of medical utility.
+
 ## Reproduce the checked research workflow
 
 ```bash
