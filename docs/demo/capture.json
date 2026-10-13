@@ -1,8 +1,8 @@
 {
-  "recorded_source_sha": "3039b60a4c2e06161e7cbb9fe7a4d8576cd57bbb",
-  "recorded_source_tree": "8c9601a43498a55e89a8a2d43c9c9765970e6e3d",
+  "recorded_source_sha": "3c5fec47f51fde60661bdfed5dafb53550e0f0e6",
+  "recorded_source_tree": "d8b642700844940709d2cf2bfefaad971aae7c07",
   "source_blobs": {
-    ".github/workflows/research.yml": "bf9589a068c063a8252b433a77fc61ecc2a75ae6",
+    ".github/workflows/research.yml": "ce75d11459133a47a9db2229477d63e459c4ee0e",
     "Ensemble_Methods_for_Breast_Cancer_Dataset.ipynb": "d2bd11ce684e32b5fcd46abc2cccda1e05c1230a",
     "requirements.txt": "27c83ba0c6a2c8221866f98a882736acf5636435",
     "run_research.py": "b99c1303e1db6d2c186ce36551901fd7925fc7da",
@@ -24,8 +24,8 @@
     "Stacking (NB, DT, LR -> LR)": 0.9649122807017544,
     "Random Forest": 0.9473684210526315
   },
-  "workflow_stdout_sha256": "2e2efdef600b09e24fbe8c13f4ce6daefaed1cb8c270bf94635ba4d12b3e316f",
-  "test_stdout_sha256": "147abdfe992a286b58de96e4ae724d3213a02ea96b61b1695fd7fff10068c1b5",
+  "workflow_stdout_sha256": "aa58d081d13210c485db0f5a18a7a4585f5b13e992e6001685b147a48788ff9f",
+  "test_stdout_sha256": "94b4c8582641126c626ece60d36bd16d478851ed120b86a8441137093c9c1922",
   "scope": "Five ensemble models train on the built-in Wisconsin Diagnostic Breast Cancer dataset, with a stratified 70/30 split. This is an educational fixed holdout evaluation, not a medical decision system or independent validation study.",
   "claims_excluded": [
     "clinical utility or safety",
@@ -36,8 +36,8 @@
   ],
   "artifacts": {
     "machine-learning-demo.gif": {
-      "bytes": 228266,
-      "sha256": "213401b5f0c413b22a5cdb8fa52dcb4b079a49a625fbc51db07da3aa21934bbe",
+      "bytes": 227983,
+      "sha256": "cd258a05ea80f7d18ae744852fb1e908df851f5de6c444330163341c54d2c220",
       "probe": {
         "programs": [],
         "streams": [
@@ -54,8 +54,8 @@
       }
     },
     "machine-learning-demo.mp4": {
-      "bytes": 170775,
-      "sha256": "c0a8e89a8249f737176c0a68e0f72cd637171e7ff459478f58c688b99209dedf",
+      "bytes": 170453,
+      "sha256": "7809f251b4da34115569eaea5805193c5e004d8fe549688144bab82ac2e77ff4",
       "probe": {
         "programs": [],
         "streams": [
@@ -72,8 +72,8 @@
       }
     },
     "machine-learning-demo-poster.png": {
-      "bytes": 51613,
-      "sha256": "c6d308127df75098db4b0472ad8a0dc4ab0740f8d8ffb6d21237990770ccd738",
+      "bytes": 51171,
+      "sha256": "f45713e9a0429e47091f89cd9de442a2fc06a62e62049b417b9ac04166bee428",
       "probe": null
     }
   }
