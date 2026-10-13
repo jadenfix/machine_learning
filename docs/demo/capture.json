@@ -1,18 +1,26 @@
 {
-  "recorded_source_sha": "3c5fec47f51fde60661bdfed5dafb53550e0f0e6",
-  "recorded_source_tree": "d8b642700844940709d2cf2bfefaad971aae7c07",
+  "recorded_source_sha": "b3004175dc22de1bfaf7ecbe36f111f73e2214de",
+  "recorded_source_tree": "213986a20328785daee31506f6923dc2ab523d25",
   "source_blobs": {
     ".github/workflows/research.yml": "ce75d11459133a47a9db2229477d63e459c4ee0e",
     "Ensemble_Methods_for_Breast_Cancer_Dataset.ipynb": "d2bd11ce684e32b5fcd46abc2cccda1e05c1230a",
-    "requirements.txt": "27c83ba0c6a2c8221866f98a882736acf5636435",
-    "run_research.py": "b99c1303e1db6d2c186ce36551901fd7925fc7da",
-    "tests/test_research_runner.py": "a14121a0eee87631440878c7108fd0737b29bf95",
-    "scripts/record_demo.py": "118e022202f86223069aa86d9c225df5fa14495c",
-    "scripts/verify_demo.py": "ed9be3cddbcfbf6afe84fce7804f8419d7c2cba4"
+    "requirements.txt": "5573ac422ba15053bdf8e7624ef5e92ed30e5155",
+    "run_research.py": "16c77fba0aec7296ccd6ef379f295f4d88363e34",
+    "tests/test_research_runner.py": "930fc7ef58c868c916cde90a374c282215a997a9",
+    "scripts/record_demo.py": "92011e4081a392b60217d99d0766726c19f09c3c",
+    "scripts/verify_demo.py": "c157039fd2a42bec32e34b20129e7655e08c1432"
   },
   "workflow_command": "python run_research.py Ensemble_Methods_for_Breast_Cancer_Dataset.ipynb --output <temp>/evidence",
   "test_command": "python -m unittest discover -s tests -v",
-  "tests_passed": 4,
+  "tests_passed": 5,
+  "dependency_versions": {
+    "numpy": "2.5.4",
+    "pandas": "2.3.3",
+    "scipy": "1.18.1",
+    "matplotlib": "3.11.2",
+    "scikit-learn": "1.9.1",
+    "Pillow": "12.3.0"
+  },
   "executed_cells": [
     1
   ],
@@ -20,12 +28,12 @@
   "model_accuracies": {
     "Bagging (Logistic Regression)": 0.9824561403508771,
     "AdaBoost (Decision Tree Stump)": 0.9532163742690059,
-    "Gradient Boosting": 0.9590643274853801,
+    "Gradient Boosting": 0.9649122807017544,
     "Stacking (NB, DT, LR -> LR)": 0.9649122807017544,
     "Random Forest": 0.9473684210526315
   },
-  "workflow_stdout_sha256": "aa58d081d13210c485db0f5a18a7a4585f5b13e992e6001685b147a48788ff9f",
-  "test_stdout_sha256": "94b4c8582641126c626ece60d36bd16d478851ed120b86a8441137093c9c1922",
+  "workflow_stdout_sha256": "00062928e1f595f7735c6c6e6bf7401b57577e061a27549da658abbb57d50e87",
+  "test_stdout_sha256": "0d212c9b4b46d18916c8862dbe119f4250061522565c4418ea4b99189d2ab775",
   "scope": "Five ensemble models train on the built-in Wisconsin Diagnostic Breast Cancer dataset, with a stratified 70/30 split. This is an educational fixed holdout evaluation, not a medical decision system or independent validation study.",
   "claims_excluded": [
     "clinical utility or safety",
@@ -36,8 +44,8 @@
   ],
   "artifacts": {
     "machine-learning-demo.gif": {
-      "bytes": 227983,
-      "sha256": "cd258a05ea80f7d18ae744852fb1e908df851f5de6c444330163341c54d2c220",
+      "bytes": 228144,
+      "sha256": "995e49e033316d1b8ddded02f036c5a661ea820e9141fda74c61c86d38f6678f",
       "probe": {
         "programs": [],
         "streams": [
@@ -54,8 +62,8 @@
       }
     },
     "machine-learning-demo.mp4": {
-      "bytes": 170453,
-      "sha256": "7809f251b4da34115569eaea5805193c5e004d8fe549688144bab82ac2e77ff4",
+      "bytes": 170377,
+      "sha256": "c08f38b15c7fcf5df799f43c20f1572ebf6ab80a25a134d5a598bcd94e61a372",
       "probe": {
         "programs": [],
         "streams": [
@@ -72,8 +80,8 @@
       }
     },
     "machine-learning-demo-poster.png": {
-      "bytes": 51171,
-      "sha256": "f45713e9a0429e47091f89cd9de442a2fc06a62e62049b417b9ac04166bee428",
+      "bytes": 51452,
+      "sha256": "4a9f1c2dfc2d7afd2d1c902af142e396913d9996e7720a70190a902f00be2418",
       "probe": null
     }
   }
