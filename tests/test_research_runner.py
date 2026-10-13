@@ -14,7 +14,8 @@ NOTEBOOK = "Ensemble_Methods_for_Breast_Cancer_Dataset.ipynb"
 class ResearchRunnerTest(unittest.TestCase):
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()
-        self.work = Path(self.temp.name)
+        self.work = Path(self.temp.name) / "repo"
+        self.work.mkdir()
         shutil.copy2(ROOT / "run_research.py", self.work / "run_research.py")
         shutil.copy2(ROOT / NOTEBOOK, self.work / NOTEBOOK)
 
