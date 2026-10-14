@@ -10,9 +10,19 @@ jobs:
       OMP_NUM_THREADS: '1'
     steps:
       - uses: actions/checkout@v4
+        with:
+          # The demo receipt intentionally points at the exact recorded source
+          # commit. Keep that ancestor available so the provenance verifier can
+          # prove the capture belongs to this branch in pull-request checkouts.
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
       - run: pip install -r requirements.txt
+      - run: python -m unittest discover -s tests -v
       - run: |
           python run_research.py Ensemble_Methods_for_Breast_Cancer_Dataset.ipynb
+      - run: python scripts/verify_demo.py
