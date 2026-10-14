@@ -35,6 +35,15 @@ if out == root or out in root.parents:
     parser.error("--output must not be the repository root or one of its ancestors")
 if out.exists() and not out.is_dir():
     parser.error("--output must be a directory")
+# Existing source directories are never an evidence destination.
+try:
+    relative = out.relative_to(root)
+except ValueError:
+    relative = None
+if relative is not None and relative.parts and relative.parts[0] in {
+    ".git", "tests", "scripts", "docs", "archive", "python", "cpp", "java"
+}:
+    parser.error("--output must not replace a source directory")
 out.parent.mkdir(parents=True, exist_ok=True)
 stage = Path(tempfile.mkdtemp(prefix=f".{out.name}.staging-", dir=out.parent))
 

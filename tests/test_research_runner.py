@@ -102,6 +102,19 @@ class ResearchRunnerTest(unittest.TestCase):
         self.assertEqual(sibling_sentinel.read_text(), "preserve sibling")
         self.assertEqual(list(self.work.parent.glob(".*.staging-*")), [])
 
+    def test_source_directory_cannot_be_replaced(self):
+        source = self.work / "tests"
+        source.mkdir()
+        sentinel = source / "important.py"
+        sentinel.write_text("keep source")
+        result = subprocess.run(
+            [sys.executable, "run_research.py", NOTEBOOK, "--output", "tests"],
+            cwd=self.work, text=True, capture_output=True, timeout=10,
+        )
+        self.assertEqual(result.returncode, 2)
+        self.assertIn("must not replace a source directory", result.stderr)
+        self.assertEqual(sentinel.read_text(), "keep source")
+
     def test_existing_file_cannot_be_used_as_output(self):
         (self.work / "evidence").write_text("source bytes")
         result = self.run_workflow()

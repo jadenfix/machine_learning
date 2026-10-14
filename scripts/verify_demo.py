@@ -5,6 +5,7 @@ import hashlib
 import importlib.metadata
 import json
 import subprocess
+import sys
 import tempfile
 from pathlib import Path
 
@@ -49,7 +50,7 @@ def main():
     with tempfile.TemporaryDirectory() as temp_name:
         output = Path(temp_name) / "evidence"
         run(
-            "python",
+            sys.executable,
             "run_research.py",
             "Ensemble_Methods_for_Breast_Cancer_Dataset.ipynb",
             "--output",

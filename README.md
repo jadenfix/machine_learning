@@ -26,3 +26,12 @@ python -m unittest discover -s tests -v
 ```
 
 Runnable notebooks: `Ensemble_Methods_for_Breast_Cancer_Dataset.ipynb`.
+
+Stacking now fits each base learner's scaler **inside its five-fold training
+procedure**, using raw training features as input. This prevents inner-fold
+preprocessing leakage while keeping the outer 171-row holdout untouched.
+The pre-repair notebook is preserved in `archive/`, including its historical
+outputs. New recordings come from the repaired source and actual execution.
+The recorder and verifier use the current Python interpreter, so an absolute
+virtual-environment invocation cannot silently run the models in another
+environment. Evidence destinations inside source directories are rejected.

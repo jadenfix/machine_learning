@@ -7,6 +7,7 @@ import json
 import math
 import shutil
 import subprocess
+import sys
 import tempfile
 from pathlib import Path
 
@@ -17,13 +18,14 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "docs" / "demo"
 FPS = 12
 WIDTH, HEIGHT = 960, 540
-TESTS_PASSED = 5
+TESTS_PASSED = 7
 SOURCE_INPUTS = [
     ".github/workflows/research.yml",
     "Ensemble_Methods_for_Breast_Cancer_Dataset.ipynb",
     "requirements.txt",
     "run_research.py",
     "tests/test_research_runner.py",
+    "tests/test_stacking_folds.py",
     "scripts/record_demo.py",
     "scripts/verify_demo.py",
 ]
@@ -191,11 +193,11 @@ def main():
         temp = Path(temp_name)
         evidence = temp / "evidence"
         workflow = run(
-            "python", "run_research.py",
+            sys.executable, "run_research.py",
             "Ensemble_Methods_for_Breast_Cancer_Dataset.ipynb",
             "--output", str(evidence)
         )
-        tests = run("python", "-m", "unittest", "discover", "-s", "tests", "-v")
+        tests = run(sys.executable, "-m", "unittest", "discover", "-s", "tests", "-v")
         report = json.loads((evidence / "execution.json").read_text())
 
         frames = temp / "frames"
